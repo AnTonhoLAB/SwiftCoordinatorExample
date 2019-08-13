@@ -18,6 +18,9 @@ class ListCoordinator: BaseCoordinator {
     }
 
     override func start() {
+        let splashViewController = ListViewController()
+        //        splashViewController.delegate = self
+        self.rootViewController.viewControllers = [splashViewController]
 //        if Auth.auth().currentUser != nil {
 //            let viewModel = ProfileViewModel(appProviver: provider)
 //            viewModel.delegate = self

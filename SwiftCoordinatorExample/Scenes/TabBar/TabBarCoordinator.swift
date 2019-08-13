@@ -14,14 +14,18 @@ protocol TabBarCoordinatorFlowProtocol: class {
     func goToOnboarding()
 }
 
+fileprivate enum TabBarItem: String {
+    case list
+    case profile
+}
+
 class TabBarCoordinator: BaseCoordinator {
     let tabBarController: UITabBarController
-       
     weak var delegate: TabBarCoordinatorFlowProtocol?
        
     override func start() {
         let listCoordinator = ListCoordinator()
-        let listTabBarItem = UITabBarItem(title: "Inicial", image: #imageLiteral(resourceName: "homeUnselected"), selectedImage: #imageLiteral(resourceName: "homeSelected"))
+        let listTabBarItem = UITabBarItem(title: TabBarItem.list.rawValue, image:  #imageLiteral(resourceName: "list"), selectedImage: #imageLiteral(resourceName: "list"))
         listTabBarItem.tag = 0
         listCoordinator.rootViewController.tabBarItem = listTabBarItem
 
@@ -29,7 +33,7 @@ class TabBarCoordinator: BaseCoordinator {
         listCoordinator.start()
 
         let profileCoordinator = ProfileCoordinator()
-        let profileTabBarItem = UITabBarItem(title: "Vídeos", image: #imageLiteral(resourceName: "videosUnselected"), selectedImage: #imageLiteral(resourceName: "videosSelected"))
+        let profileTabBarItem = UITabBarItem(title: TabBarItem.profile.rawValue, image: #imageLiteral(resourceName: "profile"), selectedImage: #imageLiteral(resourceName: "profile"))
         profileTabBarItem.tag = 1
         profileCoordinator.rootViewController.tabBarItem = profileTabBarItem
 
@@ -42,6 +46,7 @@ class TabBarCoordinator: BaseCoordinator {
        }
 
     override init() {
-           tabBarController = UITabBarController()
-       }
+        tabBarController = UITabBarController()
+        super.init()
+    }
 }

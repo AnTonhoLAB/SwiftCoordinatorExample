@@ -13,6 +13,10 @@
 		3F80A98F2302026500A7B5D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F80A98E2302026500A7B5D0 /* Assets.xcassets */; };
 		3F80A9922302026500A7B5D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F80A9902302026500A7B5D0 /* LaunchScreen.storyboard */; };
 		3F80A99D2302026600A7B5D0 /* SwiftCoordinatorExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A99C2302026600A7B5D0 /* SwiftCoordinatorExampleTests.swift */; };
+		3F80A9A82302D4D600A7B5D0 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9A72302D4D600A7B5D0 /* AppCoordinator.swift */; };
+		3F80A9AA2302E2B700A7B5D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9A92302E2B700A7B5D0 /* ProfileViewController.swift */; };
+		3F80A9AC2302E2C400A7B5D0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9AB2302E2C400A7B5D0 /* ProfileView.swift */; };
+		3F80A9AE2302EB6D00A7B5D0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9AD2302EB6D00A7B5D0 /* ListViewController.swift */; };
 		5EF9907623023929006B2E7F /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9907523023929006B2E7F /* TabBarCoordinator.swift */; };
 		5EF990782302398E006B2E7F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF990772302398E006B2E7F /* BaseCoordinator.swift */; };
 		5EF9907A230239AA006B2E7F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF99079230239AA006B2E7F /* Coordinator.swift */; };
@@ -41,6 +45,10 @@
 		3F80A9982302026600A7B5D0 /* SwiftCoordinatorExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCoordinatorExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F80A99C2302026600A7B5D0 /* SwiftCoordinatorExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCoordinatorExampleTests.swift; sourceTree = "<group>"; };
 		3F80A99E2302026600A7B5D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F80A9A72302D4D600A7B5D0 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3F80A9A92302E2B700A7B5D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3F80A9AB2302E2C400A7B5D0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3F80A9AD2302EB6D00A7B5D0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		5EF9907523023929006B2E7F /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		5EF990772302398E006B2E7F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		5EF99079230239AA006B2E7F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -121,6 +129,7 @@
 			children = (
 				5EF99079230239AA006B2E7F /* Coordinator.swift */,
 				5EF990772302398E006B2E7F /* BaseCoordinator.swift */,
+				3F80A9A72302D4D600A7B5D0 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				5EF9907D23023C56006B2E7F /* ListCoordinator.swift */,
+				3F80A9AD2302EB6D00A7B5D0 /* ListViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -155,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				5EF9907F2302404A006B2E7F /* ProfileCoordinator.swift */,
+				3F80A9A92302E2B700A7B5D0 /* ProfileViewController.swift */,
+				3F80A9AB2302E2C400A7B5D0 /* ProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -262,9 +274,13 @@
 			files = (
 				3F80A98A2302026400A7B5D0 /* ViewController.swift in Sources */,
 				5EF990802302404A006B2E7F /* ProfileCoordinator.swift in Sources */,
+				3F80A9AC2302E2C400A7B5D0 /* ProfileView.swift in Sources */,
 				3F80A9882302026400A7B5D0 /* AppDelegate.swift in Sources */,
 				5EF9907E23023C56006B2E7F /* ListCoordinator.swift in Sources */,
+				3F80A9AE2302EB6D00A7B5D0 /* ListViewController.swift in Sources */,
+				3F80A9A82302D4D600A7B5D0 /* AppCoordinator.swift in Sources */,
 				5EF9907A230239AA006B2E7F /* Coordinator.swift in Sources */,
+				3F80A9AA2302E2B700A7B5D0 /* ProfileViewController.swift in Sources */,
 				5EF9907623023929006B2E7F /* TabBarCoordinator.swift in Sources */,
 				5EF990782302398E006B2E7F /* BaseCoordinator.swift in Sources */,
 			);

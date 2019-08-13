@@ -18,6 +18,13 @@ class ProfileCoordinator: BaseCoordinator {
     }
 
     override func start() {
+        
+        let splashViewController = ProfileViewController()
+//        splashViewController.delegate = self
+        self.rootViewController.viewControllers = [splashViewController]
+//        let profileViewController = ProfileViewController.with(viewModel: viewModel)
+//        rootViewController.pushViewController(profileViewController, animated: true)
+        
 //        if Auth.auth().currentUser != nil {
 //            let viewModel = ProfileViewModel(appProviver: provider)
 //            viewModel.delegate = self
