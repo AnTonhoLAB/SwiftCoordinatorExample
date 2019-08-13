@@ -11,8 +11,6 @@ import UIKit
 class ProfileCoordinator: BaseCoordinator {
     var rootViewController: UINavigationController
     
-//    weak var flowDelegate: GoToOnboardingDelegate?
-    
     init(string: String = "") {
         rootViewController = UINavigationController()
     }
@@ -20,21 +18,6 @@ class ProfileCoordinator: BaseCoordinator {
     override func start() {
         
         let splashViewController = ProfileViewController()
-//        splashViewController.delegate = self
         self.rootViewController.viewControllers = [splashViewController]
-//        let profileViewController = ProfileViewController.with(viewModel: viewModel)
-//        rootViewController.pushViewController(profileViewController, animated: true)
-        
-//        if Auth.auth().currentUser != nil {
-//            let viewModel = ProfileViewModel(appProviver: provider)
-//            viewModel.delegate = self
-//            let profileViewController = ProfileViewController.with(viewModel: viewModel)
-//            rootViewController.pushViewController(profileViewController, animated: true)
-//        } else {
-//            let viewModel = ProfileViewModel(appProviver: provider)
-//            viewModel.delegate = self
-//            let profileViewController = ProfileWithoutUserController.with(viewModel: viewModel)
-//            rootViewController.pushViewController(profileViewController, animated: true)
-//        }
     }
 }
