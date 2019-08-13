@@ -17,6 +17,7 @@
 		5EF990782302398E006B2E7F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF990772302398E006B2E7F /* BaseCoordinator.swift */; };
 		5EF9907A230239AA006B2E7F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF99079230239AA006B2E7F /* Coordinator.swift */; };
 		5EF9907E23023C56006B2E7F /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9907D23023C56006B2E7F /* ListCoordinator.swift */; };
+		5EF990802302404A006B2E7F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9907F2302404A006B2E7F /* ProfileCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		5EF990772302398E006B2E7F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		5EF99079230239AA006B2E7F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5EF9907D23023C56006B2E7F /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		5EF9907F2302404A006B2E7F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		5EF9907C23023C27006B2E7F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				5EF9907F2302404A006B2E7F /* ProfileCoordinator.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F80A98A2302026400A7B5D0 /* ViewController.swift in Sources */,
+				5EF990802302404A006B2E7F /* ProfileCoordinator.swift in Sources */,
 				3F80A9882302026400A7B5D0 /* AppDelegate.swift in Sources */,
 				5EF9907E23023C56006B2E7F /* ListCoordinator.swift in Sources */,
 				5EF9907A230239AA006B2E7F /* Coordinator.swift in Sources */,

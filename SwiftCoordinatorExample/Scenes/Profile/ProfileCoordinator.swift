@@ -1,5 +1,5 @@
 //
-//  ListCoordinator.swift
+//  ProfileCoordinator.swift
 //  SwiftCoordinatorExample
 //
 //  Created by George Gomes on 12/08/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListCoordinator: BaseCoordinator {
+class ProfileCoordinator: BaseCoordinator {
     var rootViewController: UINavigationController
     
 //    weak var flowDelegate: GoToOnboardingDelegate?
