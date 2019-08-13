@@ -13,6 +13,10 @@
 		3F80A98F2302026500A7B5D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F80A98E2302026500A7B5D0 /* Assets.xcassets */; };
 		3F80A9922302026500A7B5D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F80A9902302026500A7B5D0 /* LaunchScreen.storyboard */; };
 		3F80A99D2302026600A7B5D0 /* SwiftCoordinatorExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A99C2302026600A7B5D0 /* SwiftCoordinatorExampleTests.swift */; };
+		5EF9907623023929006B2E7F /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9907523023929006B2E7F /* TabBarCoordinator.swift */; };
+		5EF990782302398E006B2E7F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF990772302398E006B2E7F /* BaseCoordinator.swift */; };
+		5EF9907A230239AA006B2E7F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF99079230239AA006B2E7F /* Coordinator.swift */; };
+		5EF9907E23023C56006B2E7F /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9907D23023C56006B2E7F /* ListCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		3F80A9982302026600A7B5D0 /* SwiftCoordinatorExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCoordinatorExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F80A99C2302026600A7B5D0 /* SwiftCoordinatorExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCoordinatorExampleTests.swift; sourceTree = "<group>"; };
 		3F80A99E2302026600A7B5D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EF9907523023929006B2E7F /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		5EF990772302398E006B2E7F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		5EF99079230239AA006B2E7F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5EF9907D23023C56006B2E7F /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +85,11 @@
 		3F80A9862302026400A7B5D0 /* SwiftCoordinatorExample */ = {
 			isa = PBXGroup;
 			children = (
-				3F80A9872302026400A7B5D0 /* AppDelegate.swift */,
 				3F80A9892302026400A7B5D0 /* ViewController.swift */,
 				3F80A98B2302026400A7B5D0 /* Main.storyboard */,
-				3F80A98E2302026500A7B5D0 /* Assets.xcassets */,
-				3F80A9902302026500A7B5D0 /* LaunchScreen.storyboard */,
-				3F80A9932302026500A7B5D0 /* Info.plist */,
+				5EF99072230238B2006B2E7F /* Coordinator */,
+				5EF99073230238BD006B2E7F /* Scenes */,
+				5EF990712302383B006B2E7F /* SupportingFiles */,
 			);
 			path = SwiftCoordinatorExample;
 			sourceTree = "<group>";
@@ -94,6 +101,59 @@
 				3F80A99E2302026600A7B5D0 /* Info.plist */,
 			);
 			path = SwiftCoordinatorExampleTests;
+			sourceTree = "<group>";
+		};
+		5EF990712302383B006B2E7F /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3F80A9872302026400A7B5D0 /* AppDelegate.swift */,
+				3F80A9932302026500A7B5D0 /* Info.plist */,
+				3F80A9902302026500A7B5D0 /* LaunchScreen.storyboard */,
+				3F80A98E2302026500A7B5D0 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		5EF99072230238B2006B2E7F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5EF99079230239AA006B2E7F /* Coordinator.swift */,
+				5EF990772302398E006B2E7F /* BaseCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5EF99073230238BD006B2E7F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5EF9907B23023C0B006B2E7F /* List */,
+				5EF9907C23023C27006B2E7F /* Profile */,
+				5EF9907423023905006B2E7F /* TabBar */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5EF9907423023905006B2E7F /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5EF9907523023929006B2E7F /* TabBarCoordinator.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		5EF9907B23023C0B006B2E7F /* List */ = {
+			isa = PBXGroup;
+			children = (
+				5EF9907D23023C56006B2E7F /* ListCoordinator.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		5EF9907C23023C27006B2E7F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +259,10 @@
 			files = (
 				3F80A98A2302026400A7B5D0 /* ViewController.swift in Sources */,
 				3F80A9882302026400A7B5D0 /* AppDelegate.swift in Sources */,
+				5EF9907E23023C56006B2E7F /* ListCoordinator.swift in Sources */,
+				5EF9907A230239AA006B2E7F /* Coordinator.swift in Sources */,
+				5EF9907623023929006B2E7F /* TabBarCoordinator.swift in Sources */,
+				5EF990782302398E006B2E7F /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftCoordinatorExample/Info.plist;
+				INFOPLIST_FILE = SwiftCoordinatorExample/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -369,7 +433,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.george.SwiftCoordinatorExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -378,7 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftCoordinatorExample/Info.plist;
+				INFOPLIST_FILE = SwiftCoordinatorExample/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,7 +450,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.george.SwiftCoordinatorExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
