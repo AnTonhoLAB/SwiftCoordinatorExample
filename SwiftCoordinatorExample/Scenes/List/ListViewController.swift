@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ListFlowDelegate: class {
+    func goToNew()
+}
+
 class ListViewController: UIViewController {
     
     private let listView: ListView = ListView()
@@ -21,9 +25,12 @@ class ListViewController: UIViewController {
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
+    weak var flowDelegate: ListFlowDelegate?
+    
     override func loadView() {
         super.loadView()
         listView.tableView.dataSource = self
+        listView.tableView.delegate = self
         self.view = listView
     }
     
@@ -41,7 +48,12 @@ extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewTableViewCell", for: indexPath) as? NewTableViewCell else { return UITableViewCell() }
-        cell.setup()
         return cell
+    }
+}
+
+extension ListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        flowDelegate?.goToNew()
     }
 }

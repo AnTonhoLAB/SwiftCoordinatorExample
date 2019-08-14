@@ -19,6 +19,7 @@ class NewTableViewCell: UITableViewCell {
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        self.viewModel = NewCellViewModel()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.contentView.addSubview(listView)
     }

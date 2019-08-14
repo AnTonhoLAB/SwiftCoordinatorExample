@@ -17,6 +17,15 @@ class ListCoordinator: BaseCoordinator {
 
     override func start() {
         let splashViewController = ListViewController(with: ListViewModel(NewsService()))
+        splashViewController.flowDelegate = self
         self.rootViewController.viewControllers = [splashViewController]
+        
+    }
+}
+
+extension ListCoordinator: ListFlowDelegate {
+    func goToNew() {
+        let splashViewController = ListViewController(with: ListViewModel(NewsService()))
+        rootViewController.pushViewController(splashViewController, animated: true)
     }
 }
