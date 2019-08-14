@@ -11,7 +11,11 @@ import UIKit
 class ListView: UIView {
     private var titleLabel: UILabel = UILabel()
     
-    lazy var button: UIButton = {
+    private enum ConstantSize: CGFloat {
+        case addButtonHeigh = 60
+    }
+    
+    lazy var addButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.backgroundColor = .red
         button.setTitle("fetch", for: .normal)
@@ -22,6 +26,7 @@ class ListView: UIView {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
@@ -38,19 +43,21 @@ class ListView: UIView {
 extension ListView: CodeView {
     func buildViewHierarchy() {
         
-        addSubview(button)
-//        addSubview(tableView)
+        addSubview(tableView)
+        addSubview(addButton)
     }
     
     func setupConstraints() {
         
+        tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         
-        button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -160).isActive = true
-        button.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        button.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 160).isActive = true
-        
-
+        addButton.heightAnchor.constraint(equalToConstant: ConstantSize.addButtonHeigh.rawValue).isActive = true
+        addButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        addButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        addButton.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
     }
     
     func setupAdditionalConfiguration() {
@@ -63,26 +70,5 @@ extension ListView {
     @objc func didTapOk() {
         guard let actionDelegate = actionDelegate else { return }
         actionDelegate.didTapContinue()
-    }
-}
-
-
-
-
-
-
-protocol CodeView {
-    func buildViewHierarchy()
-    func setupConstraints()
-    func setupAdditionalConfiguration()
-    func setupView()
-}
-
-//code template
-extension CodeView {
-    func setupView() {
-        buildViewHierarchy()
-        setupConstraints()
-        setupAdditionalConfiguration()
     }
 }
