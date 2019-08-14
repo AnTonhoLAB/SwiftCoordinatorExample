@@ -13,8 +13,13 @@ protocol ListObserveActionsDelegate: class {
 }
 
 class ListViewModel {
-   
-
+    var service: NewsService
+    
+    init(_ service: NewsService) {
+        self.service = service
+    }
+    
+    
 }
 
 extension ListViewModel: ListObserveActionsDelegate {
