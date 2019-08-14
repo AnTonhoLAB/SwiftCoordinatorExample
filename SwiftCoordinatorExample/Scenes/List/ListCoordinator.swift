@@ -16,7 +16,7 @@ class ListCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let splashViewController = ListViewController()
+        let splashViewController = ListViewController(with: ListViewModel())
         self.rootViewController.viewControllers = [splashViewController]
     }
 }

@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+protocol ListObserveActionsDelegate: class {
+    func didTapContinue()
+}
+
+class ListViewModel {
+   
+
+}
+
+extension ListViewModel: ListObserveActionsDelegate {
+    func didTapContinue() {
+        print("Tap na viewMdel")
+    }
+}
