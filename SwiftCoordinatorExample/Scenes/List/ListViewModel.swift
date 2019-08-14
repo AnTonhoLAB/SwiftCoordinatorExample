@@ -13,13 +13,23 @@ protocol ListObserveActionsDelegate: class {
 }
 
 class ListViewModel {
-    var service: NewsService
+    private var service: NewsService
     
     init(_ service: NewsService) {
         self.service = service
+        getNews()
     }
     
-    
+    private func getNews() {
+        service.getNews { result in
+            switch result {
+            case .success(let news):
+                print(news)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 extension ListViewModel: ListObserveActionsDelegate {

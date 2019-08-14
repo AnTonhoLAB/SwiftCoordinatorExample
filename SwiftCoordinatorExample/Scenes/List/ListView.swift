@@ -27,6 +27,8 @@ class ListView: UIView {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(NewTableViewCell.self, forCellReuseIdentifier: "NewTableViewCell")
+        tableView.tableFooterView = UIView()
         return tableView
     }()
     
@@ -37,6 +39,7 @@ class ListView: UIView {
         self.setupView()
     }
     
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
 

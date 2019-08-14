@@ -13,13 +13,13 @@ enum NetworkingError: Error {
     case noData
     case jsonParseFail
     case URLUnwrapFail
-    case indefined
+    case undefined
     
     init(error: Error){
         switch error {
             
         default:
-            self = .indefined
+            self = .undefined
         }
     }
 }

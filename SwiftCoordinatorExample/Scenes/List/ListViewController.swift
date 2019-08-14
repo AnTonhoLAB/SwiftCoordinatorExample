@@ -23,6 +23,7 @@ class ListViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
+        listView.tableView.dataSource = self
         self.view = listView
     }
     
@@ -30,5 +31,17 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         listView.actionDelegate = viewModel
+    }
+}
+
+extension ListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewTableViewCell", for: indexPath) as? NewTableViewCell else { return UITableViewCell() }
+        cell.setup()
+        return cell
     }
 }
