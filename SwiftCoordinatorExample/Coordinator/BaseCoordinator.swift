@@ -15,4 +15,10 @@ class BaseCoordinator: Coordinator {
     func start() {
         fatalError("Childrens should implement start function")
     }
+    
+    // add only unique object
+    func addDependency(_ coordinator: Coordinator) {
+        guard !childs.contains(where: { $0 === coordinator }) else { return }
+        childs.append(coordinator)
+    }
 }

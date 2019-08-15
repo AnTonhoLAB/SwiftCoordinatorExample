@@ -26,6 +26,7 @@ class ListCoordinator: BaseCoordinator {
 extension ListCoordinator: ListFlowDelegate {
     func goToNew() {
         let splashViewController = ListViewController(with: ListViewModel(NewsService()))
+        splashViewController.flowDelegate = self
         rootViewController.pushViewController(splashViewController, animated: true)
     }
 }

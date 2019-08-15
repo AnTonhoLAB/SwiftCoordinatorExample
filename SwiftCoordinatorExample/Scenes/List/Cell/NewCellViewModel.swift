@@ -7,7 +7,13 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
 class NewCellViewModel {
+    let title = BehaviorRelay<String>(value: "TOTAL")
+    
+    init() {
+    }
     
 }

@@ -28,6 +28,7 @@ class ListView: UIView {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(NewTableViewCell.self, forCellReuseIdentifier: "NewTableViewCell")
+        tableView.estimatedRowHeight = 200
         tableView.tableFooterView = UIView()
         return tableView
     }()
