@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol ListFlowDelegate: class {
     func goToNew()
@@ -15,7 +17,10 @@ protocol ListFlowDelegate: class {
 class ListViewController: UIViewController {
     
     private let listView: ListView = ListView()
+    private let disposeBag = DisposeBag()
     private var viewModel: ListViewModel!
+    
+    weak var flowDelegate: ListFlowDelegate?
     
     init(with viewModel: ListViewModel) {
         self.viewModel = viewModel
@@ -25,12 +30,8 @@ class ListViewController: UIViewController {
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    weak var flowDelegate: ListFlowDelegate?
-    
     override func loadView() {
         super.loadView()
-        listView.tableView.dataSource = self
-        listView.tableView.delegate = self
         self.view = listView
     }
     
@@ -38,27 +39,18 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         listView.actionDelegate = viewModel
-    }
-}
-
-extension ListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewTableViewCell", for: indexPath) as? NewTableViewCell else { return UITableViewCell() }
-        cell.setup(viewModel: NewCellViewModel())
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-}
-
-extension ListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        flowDelegate?.goToNew()
+        viewModel
+            .news
+            .asObserver()
+            .bind(to: listView
+                .tableView
+                .rx
+                .items(cellIdentifier: "NewTableViewCell",
+                       cellType: NewTableViewCell.self)) {
+                        row, chocolate, cell in
+                    cell.setup(viewModel: NewCellViewModel())
+        }
+        .disposed(by: disposeBag)
     }
 }

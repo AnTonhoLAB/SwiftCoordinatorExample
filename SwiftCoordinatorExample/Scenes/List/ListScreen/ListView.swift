@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+
+fileprivate enum ConstantSize: CGFloat {
+    case addButtonHeigh = 60
+}
 
 class ListView: UIView {
     private var titleLabel: UILabel = UILabel()
-    
-    private enum ConstantSize: CGFloat {
-        case addButtonHeigh = 60
-    }
     
     lazy var addButton: UIButton = {
         let button = UIButton(frame: .zero)

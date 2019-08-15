@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F45C4DB2305C494003CA013 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C4DA2305C494003CA013 /* DetailView.swift */; };
+		3F45C4DD2305C4A7003CA013 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C4DC2305C4A7003CA013 /* DetailViewController.swift */; };
+		3F45C4DF2305C4B7003CA013 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C4DE2305C4B7003CA013 /* DetailViewModel.swift */; };
+		3F45C4E12305C8AE003CA013 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C4E02305C8AE003CA013 /* DetailCoordinator.swift */; };
 		3F8051F823043BE30074C1F5 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8051F723043BE30074C1F5 /* ViewCode.swift */; };
 		3F8051FB2304458E0074C1F5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8051FA2304458E0074C1F5 /* Keys.swift */; };
 		3F8051FD23044F510074C1F5 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8051FC23044F510074C1F5 /* NewsService.swift */; };
@@ -51,6 +55,10 @@
 
 /* Begin PBXFileReference section */
 		3D1E6222F4F033A5CC3BDAE7 /* Pods-SwiftCoordinatorExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCoordinatorExample.debug.xcconfig"; path = "Target Support Files/Pods-SwiftCoordinatorExample/Pods-SwiftCoordinatorExample.debug.xcconfig"; sourceTree = "<group>"; };
+		3F45C4DA2305C494003CA013 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3F45C4DC2305C4A7003CA013 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3F45C4DE2305C4B7003CA013 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		3F45C4E02305C8AE003CA013 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 		3F8051F723043BE30074C1F5 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		3F8051FA2304458E0074C1F5 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		3F8051FC23044F510074C1F5 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
@@ -75,14 +83,14 @@
 		3F80A9A72302D4D600A7B5D0 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3F80A9A92302E2B700A7B5D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3F80A9AB2302E2C400A7B5D0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		3F80A9AD2302EB6D00A7B5D0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		3F80A9AD2302EB6D00A7B5D0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ../ListViewController.swift; sourceTree = "<group>"; };
 		3F80A9AF2302EFE000A7B5D0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		3F80A9B12302F8CB00A7B5D0 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		3F80A9B12302F8CB00A7B5D0 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListViewModel.swift; path = ../ListViewModel.swift; sourceTree = "<group>"; };
 		4C8C6CB23B25F74B0AC63E47 /* Pods_SwiftCoordinatorExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftCoordinatorExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF9907523023929006B2E7F /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		5EF990772302398E006B2E7F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		5EF99079230239AA006B2E7F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		5EF9907D23023C56006B2E7F /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		5EF9907D23023C56006B2E7F /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListCoordinator.swift; path = ../ListCoordinator.swift; sourceTree = "<group>"; };
 		5EF9907F2302404A006B2E7F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		89D1AE0F6B7A5C030470C820 /* Pods-SwiftCoordinatorExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCoordinatorExampleTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftCoordinatorExampleTests/Pods-SwiftCoordinatorExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7ABD45B3B15174356AA9773 /* Pods-SwiftCoordinatorExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCoordinatorExample.release.xcconfig"; path = "Target Support Files/Pods-SwiftCoordinatorExample/Pods-SwiftCoordinatorExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +118,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F45C4D82305C071003CA013 /* ListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3F80520D23046B120074C1F5 /* Cell */,
+				5EF9907D23023C56006B2E7F /* ListCoordinator.swift */,
+				3F80A9AF2302EFE000A7B5D0 /* ListView.swift */,
+				3F80A9AD2302EB6D00A7B5D0 /* ListViewController.swift */,
+				3F80A9B12302F8CB00A7B5D0 /* ListViewModel.swift */,
+			);
+			path = ListScreen;
+			sourceTree = "<group>";
+		};
+		3F45C4D92305C089003CA013 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3F45C4E02305C8AE003CA013 /* DetailCoordinator.swift */,
+				3F45C4DA2305C494003CA013 /* DetailView.swift */,
+				3F45C4DC2305C4A7003CA013 /* DetailViewController.swift */,
+				3F45C4DE2305C4B7003CA013 /* DetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		3F8051F6230433070074C1F5 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,11 +282,8 @@
 		5EF9907B23023C0B006B2E7F /* List */ = {
 			isa = PBXGroup;
 			children = (
-				5EF9907D23023C56006B2E7F /* ListCoordinator.swift */,
-				3F80A9AF2302EFE000A7B5D0 /* ListView.swift */,
-				3F80A9AD2302EB6D00A7B5D0 /* ListViewController.swift */,
-				3F80A9B12302F8CB00A7B5D0 /* ListViewModel.swift */,
-				3F80520D23046B120074C1F5 /* Cell */,
+				3F45C4D82305C071003CA013 /* ListScreen */,
+				3F45C4D92305C089003CA013 /* Detail */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -460,15 +488,18 @@
 				3F80A98A2302026400A7B5D0 /* ViewController.swift in Sources */,
 				5EF990802302404A006B2E7F /* ProfileCoordinator.swift in Sources */,
 				3F80A9AC2302E2C400A7B5D0 /* ProfileView.swift in Sources */,
+				3F45C4DB2305C494003CA013 /* DetailView.swift in Sources */,
 				3F80521123046C170074C1F5 /* NewCellViewModel.swift in Sources */,
 				3F8051F823043BE30074C1F5 /* ViewCode.swift in Sources */,
 				3F8052022304607C0074C1F5 /* NetworkingError.swift in Sources */,
 				3F8051FB2304458E0074C1F5 /* Keys.swift in Sources */,
 				3F80A9882302026400A7B5D0 /* AppDelegate.swift in Sources */,
+				3F45C4DD2305C4A7003CA013 /* DetailViewController.swift in Sources */,
 				5EF9907E23023C56006B2E7F /* ListCoordinator.swift in Sources */,
 				3F80A9AE2302EB6D00A7B5D0 /* ListViewController.swift in Sources */,
 				3F805208230463A30074C1F5 /* DecodeExtension.swift in Sources */,
 				3F80A9A82302D4D600A7B5D0 /* AppCoordinator.swift in Sources */,
+				3F45C4E12305C8AE003CA013 /* DetailCoordinator.swift in Sources */,
 				5EF9907A230239AA006B2E7F /* Coordinator.swift in Sources */,
 				3F80521323046C390074C1F5 /* NewCellView.swift in Sources */,
 				3F8051FD23044F510074C1F5 /* NewsService.swift in Sources */,
@@ -478,6 +509,7 @@
 				3F805206230463590074C1F5 /* URLSessionExtension.swift in Sources */,
 				3F80A9AA2302E2B700A7B5D0 /* ProfileViewController.swift in Sources */,
 				5EF9907623023929006B2E7F /* TabBarCoordinator.swift in Sources */,
+				3F45C4DF2305C4B7003CA013 /* DetailViewModel.swift in Sources */,
 				3F80520F23046C020074C1F5 /* NewTableViewCell.swift in Sources */,
 				3F80520A230464A20074C1F5 /* News.swift in Sources */,
 				3F80520023045E8E0074C1F5 /* New.swift in Sources */,

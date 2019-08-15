@@ -10,23 +10,24 @@ import UIKit
 
 class ListCoordinator: BaseCoordinator {
     var rootViewController: UINavigationController
+    var listViewController: ListViewController
     
-    init(string: String = "") {
-        rootViewController = UINavigationController()
+    override init() {
+        listViewController = ListViewController(with: ListViewModel(NewsService()))
+        rootViewController = UINavigationController.init(rootViewController: listViewController)
     }
 
     override func start() {
-        let splashViewController = ListViewController(with: ListViewModel(NewsService()))
-        splashViewController.flowDelegate = self
-        self.rootViewController.viewControllers = [splashViewController]
-        
+        listViewController.flowDelegate = self
     }
 }
 
 extension ListCoordinator: ListFlowDelegate {
     func goToNew() {
-        let splashViewController = ListViewController(with: ListViewModel(NewsService()))
-        splashViewController.flowDelegate = self
-        rootViewController.pushViewController(splashViewController, animated: true)
+        
+        let detailCoordinator = DetailCoordinator(root: rootViewController)
+        detailCoordinator.flowDelegate = self // .onboardingDelegate = self
+        addChild(coordinator: detailCoordinator)
+        detailCoordinator.start()
     }
 }

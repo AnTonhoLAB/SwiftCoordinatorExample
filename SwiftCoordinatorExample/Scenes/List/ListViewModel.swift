@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 protocol ListObserveActionsDelegate: class {
     func didTapContinue()
@@ -14,6 +16,7 @@ protocol ListObserveActionsDelegate: class {
 
 class ListViewModel {
     private var service: NewsService
+    let news = ReplaySubject<[New]>.create(bufferSize: 1)
     
     init(_ service: NewsService) {
         self.service = service
@@ -24,7 +27,7 @@ class ListViewModel {
         service.getNews { result in
             switch result {
             case .success(let news):
-                print(news)
+                self.news.onNext(news.news)
             case .failure(let error):
                 print(error)
             }
