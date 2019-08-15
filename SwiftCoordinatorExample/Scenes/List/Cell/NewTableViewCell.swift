@@ -11,16 +11,16 @@ import RxSwift
 
 class NewTableViewCell: UITableViewCell {
     
+    private lazy var cellView: NewCellView = {
+        let view = NewCellView(frame: .zero)
+        return view
+    }()
+
     private var viewModel: NewCellViewModel! {
         didSet {
             setupViewModel()
         }
     }
-    
-    private lazy var cellView: NewCellView = {
-        let view = NewCellView(frame: .zero)
-        return view
-    }()
     
     private let disposeBag = DisposeBag()
     
@@ -32,10 +32,6 @@ class NewTableViewCell: UITableViewCell {
     
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
     
     // MARK: - Functions
     func setup(viewModel: NewCellViewModel) {
