@@ -9,7 +9,10 @@
 import Foundation
 
 final class New: Codable {
-    
+    let id: String  //"27361",
+    let headline: String //"High School Musical completa dez anos: Relembre as músicas que marcaram uma geração",
+    let kicker: String//"Troy, Gabriella, Ryan, Sharpay, Chad e Taylor ficaram para sempre marcados na história da cultura pop",
+    let url: String //"https://www.vagalume.co
     let inserted: String //:"13-08-2019 12:34:04",
     let modified: String //:"13-08-2019 12:34:04",
     let pic_src: String //:"\/dynimage\/news39463-medium.jpg",

@@ -24,6 +24,7 @@ class NewCellView: UIView {
         label.text = "Title"
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
         return label
     }()
     

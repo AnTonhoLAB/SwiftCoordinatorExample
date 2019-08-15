@@ -48,8 +48,8 @@ class ListViewController: UIViewController {
                 .rx
                 .items(cellIdentifier: "NewTableViewCell",
                        cellType: NewTableViewCell.self)) {
-                        row, chocolate, cell in
-                    cell.setup(viewModel: NewCellViewModel())
+                        row, new, cell in
+                    cell.setup(viewModel: NewCellViewModel(with: new))
         }
         .disposed(by: disposeBag)
     }

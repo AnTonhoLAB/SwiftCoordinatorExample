@@ -12,10 +12,10 @@ import RxSwift
 
 class NewCellViewModel {
     let title = BehaviorRelay<String>(value: "TOTAL")
-    let titleR = BehaviorSubject<String>(value: "Total")
     
-    init() {
-        
+    init(with new: New) {
+        print(new.headline)
+        title.accept(new.headline)
     }
     
 }

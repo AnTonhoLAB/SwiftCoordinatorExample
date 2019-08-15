@@ -16,8 +16,12 @@ enum NetworkingError: Error {
     case undefined
     
     init(error: Error){
+        if let error = error as? NetworkingError{
+            self = error
+            return
+        }
+        
         switch error {
-            
         default:
             self = .undefined
         }
