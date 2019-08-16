@@ -11,11 +11,12 @@ import RxSwift
 import RxCocoa
 
 protocol ListFlowDelegate: class {
-    func goToNew()
+    func goToNew(with new: New)
 }
 
 protocol ViewControllerObserverDelegate: class {
     func startViewController()
+    func select(indexPath: IndexPath)
 }
 
 class ListViewController: UIViewController {
@@ -45,8 +46,16 @@ class ListViewController: UIViewController {
         listView.actionDelegate = viewModel
     
         viewModel
-            .news
+            .netWorkingState
             .asObserver()
+            .subscribe(onNext: { (status) in
+                print(status)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .news
+            .asObservable()
             .bind(to: listView
                 .tableView
                 .rx
@@ -54,16 +63,27 @@ class ListViewController: UIViewController {
                        cellType: NewTableViewCell.self)) {
                         row, new, cell in
                     cell.setup(viewModel: NewCellViewModel(with: new))
-        }
-        .disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
         
+        listView
+            .tableView
+            .rx
+            .itemSelected
+            .asObservable()
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+                self.observerDelegate?.select(indexPath: indexPath)
+            })
+            .disposed(by: disposeBag)
+
         viewModel
-            .netWorkingState
+            .selectedNew
             .asObserver()
-            .bind { (status) in
-                print(status)
-        }
-        .disposed(by: disposeBag)
+            .subscribe(onNext: { new in
+                self.flowDelegate?.goToNew(with: new)
+            })
+            .disposed(by: disposeBag)
         
         observerDelegate?.startViewController()
     }

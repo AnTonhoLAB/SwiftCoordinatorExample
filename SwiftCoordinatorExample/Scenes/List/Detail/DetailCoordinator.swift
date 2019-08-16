@@ -14,8 +14,8 @@ class DetailCoordinator: BaseCoordinator {
     
     weak var flowDelegate: ListFlowDelegate?
     
-    init(root: UINavigationController) {
-        let viewModel = DetailViewModel()
+    init(root: UINavigationController, new: New) {
+        let viewModel = DetailViewModel(with: new)
         controller = DetailViewController(with: viewModel)
         self.rootViewController = root
     }

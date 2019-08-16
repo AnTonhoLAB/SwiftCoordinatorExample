@@ -25,8 +25,8 @@ class ListCoordinator: BaseCoordinator {
 }
 
 extension ListCoordinator: ListFlowDelegate {
-    func goToNew() {
-        let detailCoordinator = DetailCoordinator(root: rootViewController)
+    func goToNew(with new: New) {
+        let detailCoordinator = DetailCoordinator(root: rootViewController, new: new)
         detailCoordinator.flowDelegate = self
         addChild(coordinator: detailCoordinator)
         detailCoordinator.start()

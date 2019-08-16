@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class DetailViewController: UIViewController {
     
     private let detailView: DetailView = DetailView()
+    private let disposeBag = DisposeBag()
+    
     private var viewModel: DetailViewModel!
     
     weak var flowDelegate: ListFlowDelegate?
@@ -26,5 +29,13 @@ class DetailViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = detailView
+        
+        viewModel
+            .new
+            .asObserver()
+            .subscribe(onNext: { (new) in
+                print("New: sda",new)
+            })
+            .disposed(by: disposeBag)
     }
 }

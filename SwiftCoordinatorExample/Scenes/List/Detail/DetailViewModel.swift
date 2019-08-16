@@ -7,7 +7,13 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class DetailViewModel {
+    let new = ReplaySubject<New>.create(bufferSize: 1)
     
+    init(with new: New) {
+        self.new.onNext(new)
+    }
 }
