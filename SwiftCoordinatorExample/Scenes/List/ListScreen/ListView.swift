@@ -58,4 +58,3 @@ extension ListView: CodeView {
         tableView.separatorStyle = .none
     }
 }
-

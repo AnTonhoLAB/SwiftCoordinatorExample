@@ -12,11 +12,19 @@ import UIKit
 
 class NewCellView: UIView {
     
+    lazy var contentView: UIView = {
+        let view = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 14
+        return view
+    }()
+    
     lazy var pictureImageView: UIImageView = {
         let view = UIImageView(frame: .zero)
         view.image = #imageLiteral(resourceName: "placeholderImage")
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.clipsToBounds = true
         return view
     }()
     
@@ -35,7 +43,6 @@ class NewCellView: UIView {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5463798416)
-        view.clipsToBounds = true
         return view
     }()
     
@@ -49,12 +56,7 @@ class NewCellView: UIView {
         label.numberOfLines = 0
         return label
     }()
-    
-    lazy var stack: UIStackView = {
-        let view = UIStackView(frame: .zero)
-        return view
-    }()
-    
+
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         self.setupView()
@@ -65,20 +67,24 @@ class NewCellView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.setupView()
     }
 }
 
 extension NewCellView: CodeView {
     func buildViewHierarchy() {
-        clipsToBounds = true
-        addSubview(title)
-        addSubview(pictureImageView)
+        addSubview(contentView)
+        contentView.addSubview(title)
+        contentView.addSubview(pictureImageView)
         pictureImageView.addSubview(subTitleBackground)
         subTitleBackground.addSubview(subTitle)
     }
     
     func setupConstraints(){
+        
+        contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        contentView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
         title.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
         title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5).isActive = true
@@ -98,10 +104,36 @@ extension NewCellView: CodeView {
         subTitle.bottomAnchor.constraint(equalTo: subTitleBackground.bottomAnchor, constant: -5).isActive = true
         subTitle.leadingAnchor.constraint(equalTo: subTitleBackground.leadingAnchor, constant: 5).isActive = true
         subTitle.trailingAnchor.constraint(equalTo: subTitleBackground.trailingAnchor, constant: -5).isActive = true
+        
     }
     
     func setupAdditionalConfiguration(){
-        self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.layer.cornerRadius = 8
+        self.backgroundColor = .clear
+        self.clipsToBounds = false
+        self.layer.applySketchShadow(color: .black, alpha: 1, x: 2, y: 2, blur: 14, spread: 0)
+    }
+}
+
+
+extension CALayer {
+    func applySketchShadow(
+        color: UIColor = .black,
+        alpha: Float = 0.5,
+        x: CGFloat = 0,
+        y: CGFloat = 2,
+        blur: CGFloat = 4,
+        spread: CGFloat = 0)
+    {
+        shadowColor = color.cgColor
+        shadowOpacity = alpha
+        shadowOffset = CGSize(width: x, height: y)
+        shadowRadius = blur / 2.0
+        if spread == 0 {
+            shadowPath = nil
+        } else {
+            let dx = -spread
+            let rect = bounds.insetBy(dx: dx, dy: dx)
+            shadowPath = UIBezierPath(rect: rect).cgPath
+        }
     }
 }

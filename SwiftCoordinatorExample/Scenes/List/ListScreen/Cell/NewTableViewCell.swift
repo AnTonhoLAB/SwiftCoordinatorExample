@@ -25,6 +25,7 @@ class NewTableViewCell: UITableViewCell {
     
     private let disposeBag = DisposeBag()
     
+    // Mark: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(cellView)
@@ -39,6 +40,7 @@ class NewTableViewCell: UITableViewCell {
     func setup(viewModel: NewCellViewModel) {
         self.viewModel = viewModel
     }
+    
     
     private func setupViewModel() {
         viewModel
