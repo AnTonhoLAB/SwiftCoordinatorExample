@@ -21,15 +21,6 @@ fileprivate enum ConstantSize: CGFloat {
 class ListView: UIView {
     private var titleLabel: UILabel = UILabel()
     
-    lazy var addButton: UIButton = {
-        let button = UIButton(frame: .zero)
-        button.backgroundColor = .red
-        button.setTitle("fetch", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapOk), for: .touchUpInside)
-        return button
-    }()
-    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,22 +43,14 @@ class ListView: UIView {
 
 extension ListView: CodeView {
     func buildViewHierarchy() {
-        
         addSubview(tableView)
-        addSubview(addButton)
     }
     
     func setupConstraints() {
-        
         tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        
-        addButton.heightAnchor.constraint(equalToConstant: ConstantSize.addButtonHeigh.rawValue).isActive = true
-        addButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        addButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        addButton.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
     }
     
     func setupAdditionalConfiguration() {
@@ -76,10 +59,3 @@ extension ListView: CodeView {
     }
 }
 
-// MARK: - Actions
-extension ListView {
-    @objc func didTapOk() {
-        guard let actionDelegate = actionDelegate else { return }
-        actionDelegate.didTapContinue()
-    }
-}
