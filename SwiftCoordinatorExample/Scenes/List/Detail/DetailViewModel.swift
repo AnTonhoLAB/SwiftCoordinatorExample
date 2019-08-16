@@ -15,5 +15,6 @@ class DetailViewModel {
     
     init(with new: New) {
         self.new.onNext(new)
+        
     }
 }

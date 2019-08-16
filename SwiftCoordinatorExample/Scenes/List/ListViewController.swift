@@ -14,7 +14,7 @@ protocol ListFlowDelegate: class {
     func goToNew(with new: New)
 }
 
-protocol ViewControllerObserverDelegate: class {
+protocol ListViewControllerActionDelegate: class {
     func startViewController()
     func select(indexPath: IndexPath)
 }
@@ -26,7 +26,7 @@ class ListViewController: UIViewController {
     private var viewModel: ListViewModel!
     
     weak var flowDelegate: ListFlowDelegate?
-    weak var observerDelegate: ViewControllerObserverDelegate?
+    weak var actionDelegate: ListViewControllerActionDelegate?
     
     init(with viewModel: ListViewModel) {
         self.viewModel = viewModel
@@ -73,7 +73,7 @@ class ListViewController: UIViewController {
             .asObservable()
             .subscribe(onNext: { [weak self] indexPath in
                 guard let self = self else { return }
-                self.observerDelegate?.select(indexPath: indexPath)
+                self.actionDelegate?.select(indexPath: indexPath)
             })
             .disposed(by: disposeBag)
 
@@ -85,6 +85,6 @@ class ListViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        observerDelegate?.startViewController()
+        actionDelegate?.startViewController()
     }
 }

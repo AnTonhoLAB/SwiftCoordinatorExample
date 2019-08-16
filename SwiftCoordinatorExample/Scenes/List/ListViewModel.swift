@@ -36,7 +36,7 @@ class ListViewModel {
     }
 }
 
-extension ListViewModel: ViewControllerObserverDelegate {
+extension ListViewModel: ListViewControllerActionDelegate {
   
     func startViewController() {
         getNews()

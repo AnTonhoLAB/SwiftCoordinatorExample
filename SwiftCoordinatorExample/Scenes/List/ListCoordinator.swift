@@ -16,7 +16,7 @@ class ListCoordinator: BaseCoordinator {
         let viewModel = ListViewModel(NewsService())
         listViewController = ListViewController(with: viewModel)
         rootViewController = UINavigationController.init(rootViewController: listViewController)
-        listViewController.observerDelegate = viewModel
+        listViewController.actionDelegate = viewModel
     }
 
     override func start() {
