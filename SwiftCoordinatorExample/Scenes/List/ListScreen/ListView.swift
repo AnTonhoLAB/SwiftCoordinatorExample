@@ -10,6 +10,10 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+protocol ListObserveActionsDelegate: class {
+    func didTapContinue()
+}
+
 fileprivate enum ConstantSize: CGFloat {
     case addButtonHeigh = 60
 }
@@ -68,6 +72,7 @@ extension ListView: CodeView {
     
     func setupAdditionalConfiguration() {
         backgroundColor = .darkGray
+        tableView.separatorStyle = .none
     }
 }
 

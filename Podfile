@@ -8,6 +8,7 @@ target 'SwiftCoordinatorExample' do
   # Pods for SwiftCoordinatorExample
     pod 'RxSwift', '~> 5'
     pod 'RxCocoa', '~> 5'
+    pod 'Kingfisher', '~> 5.7'
 
   target 'SwiftCoordinatorExampleTests' do
     inherit! :search_paths

@@ -10,33 +10,41 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol ListObserveActionsDelegate: class {
-    func didTapContinue()
-}
 
 class ListViewModel {
     private var service: NewsService
     let news = ReplaySubject<[New]>.create(bufferSize: 1)
+    let netWorkingState = ReplaySubject<NetworkingStatus>.create(bufferSize: 1)
     
     init(_ service: NewsService) {
         self.service = service
-        getNews()
     }
     
     private func getNews() {
+        self.netWorkingState.onNext(.loading)
         service.getNews { result in
             switch result {
             case .success(let news):
                 self.news.onNext(news.news)
+                self.netWorkingState.onNext(.success)
             case .failure(let error):
-                print(error)
+                self.netWorkingState.onNext(.fail(NetworkingError(error: error)))
+                break
             }
         }
     }
 }
 
+extension ListViewModel: ViewControllerObserverDelegate {
+    func startViewController() {
+        getNews()
+    }
+}
+
 extension ListViewModel: ListObserveActionsDelegate {
     func didTapContinue() {
-        print("Tap na viewMdel")
+        // TODO: - "Tap na viewMdel"
     }
+    
+    
 }

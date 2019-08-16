@@ -13,8 +13,10 @@ class ListCoordinator: BaseCoordinator {
     var listViewController: ListViewController
     
     override init() {
-        listViewController = ListViewController(with: ListViewModel(NewsService()))
+        let viewModel = ListViewModel(NewsService())
+        listViewController = ListViewController(with: viewModel)
         rootViewController = UINavigationController.init(rootViewController: listViewController)
+        listViewController.observerDelegate = viewModel
     }
 
     override func start() {
@@ -24,9 +26,8 @@ class ListCoordinator: BaseCoordinator {
 
 extension ListCoordinator: ListFlowDelegate {
     func goToNew() {
-        
         let detailCoordinator = DetailCoordinator(root: rootViewController)
-        detailCoordinator.flowDelegate = self // .onboardingDelegate = self
+        detailCoordinator.flowDelegate = self
         addChild(coordinator: detailCoordinator)
         detailCoordinator.start()
     }

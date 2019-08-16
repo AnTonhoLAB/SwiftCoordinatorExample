@@ -11,11 +11,15 @@ import RxCocoa
 import RxSwift
 
 class NewCellViewModel {
-    let title = BehaviorRelay<String>(value: "TOTAL")
+//    let title = BehaviorRelay<String>(value: "TOTAL")
+    let title = ReplaySubject<String>.create(bufferSize: 1)
+    let subTitle = ReplaySubject<String>.create(bufferSize: 1)
+    let image = ReplaySubject<String>.create(bufferSize: 1)
     
     init(with new: New) {
-        print(new.headline)
-        title.accept(new.headline)
+        title.onNext(new.headline)
+        subTitle.onNext(new.kicker)
+        image.onNext(new.pic_src)
     }
     
 }

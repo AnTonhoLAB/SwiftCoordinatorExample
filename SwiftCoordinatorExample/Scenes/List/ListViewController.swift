@@ -14,6 +14,10 @@ protocol ListFlowDelegate: class {
     func goToNew()
 }
 
+protocol ViewControllerObserverDelegate: class {
+    func startViewController()
+}
+
 class ListViewController: UIViewController {
     
     private let listView: ListView = ListView()
@@ -21,6 +25,7 @@ class ListViewController: UIViewController {
     private var viewModel: ListViewModel!
     
     weak var flowDelegate: ListFlowDelegate?
+    weak var observerDelegate: ViewControllerObserverDelegate?
     
     init(with viewModel: ListViewModel) {
         self.viewModel = viewModel
@@ -37,7 +42,6 @@ class ListViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         listView.actionDelegate = viewModel
     
         viewModel
@@ -52,5 +56,15 @@ class ListViewController: UIViewController {
                     cell.setup(viewModel: NewCellViewModel(with: new))
         }
         .disposed(by: disposeBag)
+        
+        viewModel
+            .netWorkingState
+            .asObserver()
+            .bind { (status) in
+                print(status)
+        }
+        .disposed(by: disposeBag)
+        
+        observerDelegate?.startViewController()
     }
 }

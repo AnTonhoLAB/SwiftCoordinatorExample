@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Kingfisher
 
 class NewTableViewCell: UITableViewCell {
     
@@ -27,7 +28,8 @@ class NewTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(cellView)
-        cellView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+        cellView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 0, enableInsets: false)
+        selectionStyle = .none
     }
     
     @available(*, unavailable)
@@ -44,6 +46,27 @@ class NewTableViewCell: UITableViewCell {
             .observeOn(MainScheduler.instance)
             .bind(to: self.cellView.title.rx.text)
             .disposed(by: disposeBag)
+        
+        viewModel
+            .subTitle
+            .observeOn(MainScheduler.instance)
+            .bind(to: self.cellView.subTitle.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel
+            .image
+            .observeOn(MainScheduler.instance)
+            .bind { (baseURL) in
+                let vagStrint = "https://www.vagalume.com.br\(baseURL)"
+                let url = URL(string: vagStrint)
+                self.cellView
+                    .pictureImageView
+                    .kf
+                    .setImage(with:url)
+        }
+        .disposed(by: disposeBag)
+        
+        
     }
 }
 
