@@ -12,12 +12,12 @@ import RxCocoa
 
 
 class ListViewModel {
-    private var service: NewsService
+    private var service: NewsServiceProtocol
     let news = BehaviorRelay<[New]>(value: [New]())
     let netWorkingState = ReplaySubject<NetworkingStatus>.create(bufferSize: 1)
     let selectedNew = ReplaySubject<New>.create(bufferSize: 1)
     
-    init(_ service: NewsService) {
+    init(_ service: NewsServiceProtocol) {
         self.service = service
     }
     

@@ -14,8 +14,7 @@ protocol ListFlowDelegate: class {
     func goToNew(with new: New)
 }
 
-protocol ListViewControllerActionDelegate: class {
-    func startViewController()
+protocol ListViewControllerActionDelegate: StartableViewController {
     func select(indexPath: IndexPath)
 }
 

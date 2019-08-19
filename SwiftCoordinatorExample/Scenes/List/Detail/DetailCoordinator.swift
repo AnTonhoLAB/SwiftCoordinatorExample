@@ -15,14 +15,14 @@ class DetailCoordinator: BaseCoordinator {
     weak var flowDelegate: ListFlowDelegate?
     
     init(root: UINavigationController, new: New) {
-        let viewModel = DetailViewModel(with: new)
+        let viewModel = DetailViewModel(with: new, service: NewsService())
         controller = DetailViewController(with: viewModel)
+        controller.actionDelegate = viewModel
+        controller.flowDelegate = flowDelegate
         self.rootViewController = root
     }
     
     override func start() {
-        ///Pass service to this view model
-        controller.flowDelegate = flowDelegate
         rootViewController.pushViewController(controller, animated: true)
     }
 }

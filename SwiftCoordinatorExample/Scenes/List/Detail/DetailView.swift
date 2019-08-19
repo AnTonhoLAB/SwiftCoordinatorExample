@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import WebKit
 
 class DetailView: UIView {
-    private(set) lazy var view: UIView = {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .yellow
+//    private(set) lazy var view: UIView = {
+//        let view = UIView(frame: .zero)
+//        view.backgroundColor = .yellow
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }()
+    
+    lazy var webView: WKWebView = {
+        let view = WKWebView(frame: .zero)
+        
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -30,14 +38,14 @@ class DetailView: UIView {
 
 extension DetailView: CodeView {
     func buildViewHierarchy() {
-        addSubview(view)
+        addSubview(webView)
     }
     
     func setupConstraints() {
-        view.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
-        view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
-        view.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50).isActive = true
-        view.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50).isActive = true
+        webView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
+        webView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        webView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        webView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
     }
     
     func setupAdditionalConfiguration() {

@@ -30,8 +30,8 @@ extension URLSession {
         }
     }
     
-    // This function make a request and complete with the Data in a `Result`
-    func dataTaskData(with url: URL, completion: @escaping (Result<Data, Error>) -> Void) -> URLSessionDataTask {
+    // This function make a request and complete with the String in a `Result`
+    func dataTaskString(with url: URL, completion: @escaping (Result<String, Error>) -> Void) -> URLSessionDataTask {
         return dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
@@ -42,7 +42,8 @@ extension URLSession {
                 completion(.failure(error))
                 return
             }
-            completion(.success(data))
+            let string = String(decoding: data, as: UTF8.self)
+            completion(.success(string))
         }
     }
 }
