@@ -10,9 +10,6 @@ import UIKit
 import RxSwift
 import WebKit
 
-//protocol DetailViewControllerActionDelegate: class, StartableViewController {
-//}
-
 class DetailViewController: UIViewController {
     
     private let detailView: DetailView = DetailView()
@@ -28,8 +25,7 @@ class DetailViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         self.detailView.webView.uiDelegate = self
-        self.detailView.webView.navigationDelegate = self
-        
+        self.detailView.webView.navigationDelegate = self    
     }
     
     @available(*, unavailable)
