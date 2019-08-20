@@ -110,7 +110,7 @@ extension NewCellView: CodeView {
     func setupAdditionalConfiguration(){
         self.backgroundColor = .clear
         self.clipsToBounds = false
-        self.layer.applySketchShadow(color: .black, alpha: 1, x: 2, y: 2, blur: 14, spread: 0)
+        self.layer.applySketchShadow(color: .black, alpha: 0.2, x: 0, y: 0, blur: 10, spread: 0)
     }
 }
 
