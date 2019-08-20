@@ -10,13 +10,25 @@ import UIKit
 
 class ListCoordinator: BaseCoordinator {
     var rootViewController: UINavigationController
+    var listViewController: ListViewController
     
-    init(string: String = "") {
-        rootViewController = UINavigationController()
+    override init() {
+        let viewModel = ListViewModel(NewsService())
+        listViewController = ListViewController(with: viewModel)
+        rootViewController = UINavigationController.init(rootViewController: listViewController)
+        listViewController.actionDelegate = viewModel
     }
 
     override func start() {
-        let splashViewController = ListViewController(with: ListViewModel())
-        self.rootViewController.viewControllers = [splashViewController]
+        listViewController.flowDelegate = self
+    }
+}
+
+extension ListCoordinator: ListFlowDelegate {
+    func goToNew(with new: New) {
+        let detailCoordinator = DetailCoordinator(root: rootViewController, new: new)
+        detailCoordinator.flowDelegate = self
+        addChild(coordinator: detailCoordinator)
+        detailCoordinator.start()
     }
 }
