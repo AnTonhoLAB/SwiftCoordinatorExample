@@ -48,7 +48,7 @@ class ListViewController: UIViewController {
             .netWorkingState
             .asObserver()
             .subscribe(onNext: { (status) in
-                print(status)
+                // TODO: - Setup loading animation
             })
             .disposed(by: disposeBag)
         

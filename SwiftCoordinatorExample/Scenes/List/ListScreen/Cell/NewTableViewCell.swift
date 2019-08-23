@@ -29,7 +29,7 @@ class NewTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(cellView)
-        cellView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 5, paddingBottom: 10, paddingRight: 5, width: 0, height: 0, enableInsets: false)
+        cellView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 5, width: 0, height: 0, enableInsets: false)
         selectionStyle = .none
     }
     
@@ -67,8 +67,7 @@ class NewTableViewCell: UITableViewCell {
                     .setImage(with:url)
         }
         .disposed(by: disposeBag)
-        
-        
+
     }
 }
 
@@ -82,9 +81,6 @@ extension UIView {
             let insets = self.safeAreaInsets
             topInset = insets.top
             bottomInset = insets.bottom
-            
-            print("Top: \(topInset)")
-                print("bottom: \(bottomInset)")
         }
         
         translatesAutoresizingMaskIntoConstraints = false

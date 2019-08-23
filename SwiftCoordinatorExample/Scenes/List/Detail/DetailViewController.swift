@@ -38,18 +38,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel
-            .new
-            .asObserver()
-            .subscribe(onNext: { (new) in
-                print(new.url)
-//                if let url = URL(string: new.url) {
-//                    let request = URLRequest(url: url)
-//                    self.detailView
-//                        .webView.load(request)
-//                }
-            })
-            .disposed(by: disposeBag)
         
         viewModel
             .content
