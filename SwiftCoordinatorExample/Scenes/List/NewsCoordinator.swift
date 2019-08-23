@@ -1,5 +1,5 @@
 //
-//  ListCoordinator.swift
+//  NewsCoordinator.swift
 //  SwiftCoordinatorExample
 //
 //  Created by George Gomes on 12/08/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListCoordinator: BaseCoordinator {
+class NewsCoordinator: BaseCoordinator {
     var rootViewController: UINavigationController
     var listViewController: ListViewController
     
@@ -24,7 +24,7 @@ class ListCoordinator: BaseCoordinator {
     }
 }
 
-extension ListCoordinator: ListFlowDelegate {
+extension NewsCoordinator: ListFlowDelegate {
     func goToNew(with new: New) {
         let detailCoordinator = DetailCoordinator(root: rootViewController, new: new)
         detailCoordinator.flowDelegate = self

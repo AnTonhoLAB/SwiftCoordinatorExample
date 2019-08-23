@@ -18,7 +18,7 @@ fileprivate enum ConstantSize: CGFloat {
     case addButtonHeigh = 60
 }
 
-class ListView: UIView {
+class NewsView: UIView {
     private var titleLabel: UILabel = UILabel()
     
     lazy var tableView: UITableView = {
@@ -41,7 +41,7 @@ class ListView: UIView {
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
 
-extension ListView: CodeView {
+extension NewsView: CodeView {
     func buildViewHierarchy() {
         addSubview(tableView)
     }

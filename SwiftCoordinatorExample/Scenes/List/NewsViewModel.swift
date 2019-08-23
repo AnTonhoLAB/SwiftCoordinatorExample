@@ -1,5 +1,5 @@
 //
-//  ListViewModel.swift
+//  NewsViewModel.swift
 //  SwiftCoordinatorExample
 //
 //  Created by George Gomes on 13/08/19.
@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 
-class ListViewModel {
+class NewsViewModel {
     private var service: NewsServiceProtocol
     let news = BehaviorRelay<[New]>(value: [New]())
     let netWorkingState = ReplaySubject<NetworkingStatus>.create(bufferSize: 1)
@@ -36,7 +36,7 @@ class ListViewModel {
     }
 }
 
-extension ListViewModel: ListViewControllerActionDelegate {
+extension NewsViewModel: NewsViewControllerActionDelegate {
   
     func startViewController() {
         getNews()
@@ -47,7 +47,7 @@ extension ListViewModel: ListViewControllerActionDelegate {
     }
 }
 
-extension ListViewModel: ListObserveActionsDelegate {
+extension NewsViewModel: ListObserveActionsDelegate {
     func didTapContinue() {
         // TODO: - "Tap na viewMdel"
     }

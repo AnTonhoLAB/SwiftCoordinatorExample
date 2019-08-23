@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  NewsViewController.swift
 //  SwiftCoordinatorExample
 //
 //  Created by George Gomes on 13/08/19.
@@ -14,18 +14,18 @@ protocol ListFlowDelegate: class {
     func goToNew(with new: New)
 }
 
-protocol ListViewControllerActionDelegate: StartableViewController {
+protocol NewsViewControllerActionDelegate: StartableViewController {
     func select(indexPath: IndexPath)
 }
 
-class ListViewController: UIViewController {
+class NewsViewController: UIViewController {
     
-    private let listView: ListView = ListView()
+    private let listView: NewsView = NewsView()
     private let disposeBag = DisposeBag()
     private var viewModel: ListViewModel!
     
     weak var flowDelegate: ListFlowDelegate?
-    weak var actionDelegate: ListViewControllerActionDelegate?
+    weak var actionDelegate: NewsViewControllerActionDelegate?
     
     init(with viewModel: ListViewModel) {
         self.viewModel = viewModel
