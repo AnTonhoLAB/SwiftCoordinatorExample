@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol ListFlowDelegate: class {
+protocol NewsFlowDelegate: class {
     func goToNew(with new: New)
 }
 
@@ -22,12 +22,12 @@ class NewsViewController: UIViewController {
     
     private let listView: NewsView = NewsView()
     private let disposeBag = DisposeBag()
-    private var viewModel: ListViewModel!
+    private var viewModel: NewsViewModel!
     
-    weak var flowDelegate: ListFlowDelegate?
+    weak var flowDelegate: NewsFlowDelegate?
     weak var actionDelegate: NewsViewControllerActionDelegate?
     
-    init(with viewModel: ListViewModel) {
+    init(with viewModel: NewsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

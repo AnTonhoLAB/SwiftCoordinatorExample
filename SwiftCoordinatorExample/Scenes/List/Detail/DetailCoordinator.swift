@@ -12,7 +12,7 @@ class DetailCoordinator: BaseCoordinator {
     var rootViewController: UINavigationController!
     var controller: DetailViewController!
     
-    weak var flowDelegate: ListFlowDelegate?
+    weak var flowDelegate: NewsFlowDelegate?
     
     init(root: UINavigationController, new: New) {
         let viewModel = DetailViewModel(with: new, service: NewsService())

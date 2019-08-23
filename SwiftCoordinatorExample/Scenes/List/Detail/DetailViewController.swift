@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
     
     private var viewModel: DetailViewModel!
     
-    weak var flowDelegate: ListFlowDelegate?
+    weak var flowDelegate: NewsFlowDelegate?
     weak var actionDelegate: StartableViewController?
     
     init(with viewModel: DetailViewModel) {

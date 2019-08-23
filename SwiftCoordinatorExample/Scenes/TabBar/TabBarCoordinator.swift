@@ -24,7 +24,7 @@ class TabBarCoordinator: BaseCoordinator {
     weak var delegate: TabBarCoordinatorFlowProtocol?
        
     override func start() {
-        let listCoordinator = ListCoordinator()
+        let listCoordinator = NewsCoordinator()
         let listTabBarItem = UITabBarItem(title: TabBarItem.list.rawValue, image:  #imageLiteral(resourceName: "list"), selectedImage: #imageLiteral(resourceName: "list"))
         listTabBarItem.tag = 0
         listCoordinator.rootViewController.tabBarItem = listTabBarItem

@@ -33,13 +33,13 @@
 		3F80A9A82302D4D600A7B5D0 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9A72302D4D600A7B5D0 /* AppCoordinator.swift */; };
 		3F80A9AA2302E2B700A7B5D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9A92302E2B700A7B5D0 /* ProfileViewController.swift */; };
 		3F80A9AC2302E2C400A7B5D0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9AB2302E2C400A7B5D0 /* ProfileView.swift */; };
-		3F80A9AE2302EB6D00A7B5D0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9AD2302EB6D00A7B5D0 /* ListViewController.swift */; };
-		3F80A9B02302EFE000A7B5D0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9AF2302EFE000A7B5D0 /* ListView.swift */; };
-		3F80A9B22302F8CB00A7B5D0 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9B12302F8CB00A7B5D0 /* ListViewModel.swift */; };
+		3F80A9AE2302EB6D00A7B5D0 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9AD2302EB6D00A7B5D0 /* NewsViewController.swift */; };
+		3F80A9B02302EFE000A7B5D0 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9AF2302EFE000A7B5D0 /* NewsView.swift */; };
+		3F80A9B22302F8CB00A7B5D0 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A9B12302F8CB00A7B5D0 /* NewsViewModel.swift */; };
 		5EF9907623023929006B2E7F /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9907523023929006B2E7F /* TabBarCoordinator.swift */; };
 		5EF990782302398E006B2E7F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF990772302398E006B2E7F /* BaseCoordinator.swift */; };
 		5EF9907A230239AA006B2E7F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF99079230239AA006B2E7F /* Coordinator.swift */; };
-		5EF9907E23023C56006B2E7F /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9907D23023C56006B2E7F /* ListCoordinator.swift */; };
+		5EF9907E23023C56006B2E7F /* NewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9907D23023C56006B2E7F /* NewsCoordinator.swift */; };
 		5EF990802302404A006B2E7F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9907F2302404A006B2E7F /* ProfileCoordinator.swift */; };
 		6A8C236FD91E2E9FD39139A1 /* Pods_SwiftCoordinatorExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76EE44F4546FD481A381B26 /* Pods_SwiftCoordinatorExampleTests.framework */; };
 		FFAC745590E021EDF8119A69 /* Pods_SwiftCoordinatorExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C8C6CB23B25F74B0AC63E47 /* Pods_SwiftCoordinatorExample.framework */; };
@@ -87,14 +87,14 @@
 		3F80A9A72302D4D600A7B5D0 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3F80A9A92302E2B700A7B5D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3F80A9AB2302E2C400A7B5D0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		3F80A9AD2302EB6D00A7B5D0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ../ListViewController.swift; sourceTree = "<group>"; };
-		3F80A9AF2302EFE000A7B5D0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		3F80A9B12302F8CB00A7B5D0 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListViewModel.swift; path = ../ListViewModel.swift; sourceTree = "<group>"; };
+		3F80A9AD2302EB6D00A7B5D0 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsViewController.swift; path = ../NewsViewController.swift; sourceTree = "<group>"; };
+		3F80A9AF2302EFE000A7B5D0 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		3F80A9B12302F8CB00A7B5D0 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsViewModel.swift; path = ../NewsViewModel.swift; sourceTree = "<group>"; };
 		4C8C6CB23B25F74B0AC63E47 /* Pods_SwiftCoordinatorExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftCoordinatorExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF9907523023929006B2E7F /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		5EF990772302398E006B2E7F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		5EF99079230239AA006B2E7F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		5EF9907D23023C56006B2E7F /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListCoordinator.swift; path = ../ListCoordinator.swift; sourceTree = "<group>"; };
+		5EF9907D23023C56006B2E7F /* NewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsCoordinator.swift; path = ../NewsCoordinator.swift; sourceTree = "<group>"; };
 		5EF9907F2302404A006B2E7F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		89D1AE0F6B7A5C030470C820 /* Pods-SwiftCoordinatorExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCoordinatorExampleTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftCoordinatorExampleTests/Pods-SwiftCoordinatorExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7ABD45B3B15174356AA9773 /* Pods-SwiftCoordinatorExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCoordinatorExample.release.xcconfig"; path = "Target Support Files/Pods-SwiftCoordinatorExample/Pods-SwiftCoordinatorExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,10 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				3F80520D23046B120074C1F5 /* Cell */,
-				5EF9907D23023C56006B2E7F /* ListCoordinator.swift */,
-				3F80A9AF2302EFE000A7B5D0 /* ListView.swift */,
-				3F80A9AD2302EB6D00A7B5D0 /* ListViewController.swift */,
-				3F80A9B12302F8CB00A7B5D0 /* ListViewModel.swift */,
+				5EF9907D23023C56006B2E7F /* NewsCoordinator.swift */,
+				3F80A9AF2302EFE000A7B5D0 /* NewsView.swift */,
+				3F80A9AD2302EB6D00A7B5D0 /* NewsViewController.swift */,
+				3F80A9B12302F8CB00A7B5D0 /* NewsViewModel.swift */,
 			);
 			path = ListScreen;
 			sourceTree = "<group>";
@@ -511,17 +511,17 @@
 				3F8051FB2304458E0074C1F5 /* Keys.swift in Sources */,
 				3F80A9882302026400A7B5D0 /* AppDelegate.swift in Sources */,
 				3F45C4DD2305C4A7003CA013 /* DetailViewController.swift in Sources */,
-				5EF9907E23023C56006B2E7F /* ListCoordinator.swift in Sources */,
-				3F80A9AE2302EB6D00A7B5D0 /* ListViewController.swift in Sources */,
+				5EF9907E23023C56006B2E7F /* NewsCoordinator.swift in Sources */,
+				3F80A9AE2302EB6D00A7B5D0 /* NewsViewController.swift in Sources */,
 				3F805208230463A30074C1F5 /* DecodeExtension.swift in Sources */,
 				3F80A9A82302D4D600A7B5D0 /* AppCoordinator.swift in Sources */,
 				3F45C4E12305C8AE003CA013 /* DetailCoordinator.swift in Sources */,
 				5EF9907A230239AA006B2E7F /* Coordinator.swift in Sources */,
 				3F80521323046C390074C1F5 /* NewCellView.swift in Sources */,
 				3F8051FD23044F510074C1F5 /* NewsService.swift in Sources */,
-				3F80A9B02302EFE000A7B5D0 /* ListView.swift in Sources */,
+				3F80A9B02302EFE000A7B5D0 /* NewsView.swift in Sources */,
 				3F80520C230465A80074C1F5 /* ResponseBuilder.swift in Sources */,
-				3F80A9B22302F8CB00A7B5D0 /* ListViewModel.swift in Sources */,
+				3F80A9B22302F8CB00A7B5D0 /* NewsViewModel.swift in Sources */,
 				3F805206230463590074C1F5 /* URLSessionExtension.swift in Sources */,
 				3F80A9AA2302E2B700A7B5D0 /* ProfileViewController.swift in Sources */,
 				5EF9907623023929006B2E7F /* TabBarCoordinator.swift in Sources */,

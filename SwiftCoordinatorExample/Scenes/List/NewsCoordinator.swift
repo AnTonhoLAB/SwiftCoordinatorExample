@@ -10,11 +10,11 @@ import UIKit
 
 class NewsCoordinator: BaseCoordinator {
     var rootViewController: UINavigationController
-    var listViewController: ListViewController
+    var listViewController: NewsViewController
     
     override init() {
-        let viewModel = ListViewModel(NewsService())
-        listViewController = ListViewController(with: viewModel)
+        let viewModel = NewsViewModel(NewsService())
+        listViewController = NewsViewController(with: viewModel)
         rootViewController = UINavigationController.init(rootViewController: listViewController)
         listViewController.actionDelegate = viewModel
     }
@@ -24,7 +24,7 @@ class NewsCoordinator: BaseCoordinator {
     }
 }
 
-extension NewsCoordinator: ListFlowDelegate {
+extension NewsCoordinator: NewsFlowDelegate {
     func goToNew(with new: New) {
         let detailCoordinator = DetailCoordinator(root: rootViewController, new: new)
         detailCoordinator.flowDelegate = self
