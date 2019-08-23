@@ -67,8 +67,7 @@ class NewTableViewCell: UITableViewCell {
                     .setImage(with:url)
         }
         .disposed(by: disposeBag)
-        
-        
+
     }
 }
 
